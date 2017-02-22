@@ -1,0 +1,45 @@
+.my-container
+{
+	background: #52c1ea;
+	/* background: linear-gradient(to bottom right, #52c1ea, #01ffe8); */
+	/* background:  linear-gradient(to bottom right, #6e00ff, #00fff7); */
+	background: linear-gradient(to bottom right, #00baff, #00d0bd);
+	min-width: 360px;
+    /*
+	background-image: url('http://i.jootix.com/o/Splash-splash-ratow.jpg');
+    height: 70vh;
+	background-size: cover;
+	background-attachment: fixed;
+	*/
+}	
+
+.uk-navbar
+{
+	border-radius: 0px;
+}
+	
+.uk-panel-box
+{	
+	padding: 15px;
+	background: black;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.26), transparent);
+    color: #fff;
+	border: none;
+    /* border: 1px solid #ddd; */
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.13);
+    border-radius: 0px;
+	/* border-radius: 4px; */
+}
+
+.custom-h
+{
+	
+    font-size: 36px;
+    line-height: 42px;
+	margin-top: 25px;
+	margin: 0 0 15px 0;
+    /* font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; */
+    font-weight: 400;
+    /* color: #444; */
+    text-transform: none;
+}

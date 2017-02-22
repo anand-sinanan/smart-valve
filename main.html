@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SmartValve - User Main</title>
+	<!-- <link rel="stylesheet" type="text/css" href="uikit/css/uikit.gradient.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="uikit/css/uikit.almost-flat.min.css">
+	<link rel="stylesheet" type="text/css" href="uikit/css/components/sticky.almost-flat.min.css">
+	<link rel="stylesheet" type="text/css" href="uikit/css/components/notify.almost-flat.min.css">
+
+	<link rel="stylesheet" type="text/css" href="custom/css/main.css">
+
+	<script type="text/javascript" src="jquery3.1.1/jquery-3.1.1.min.js"></script>
+
+	<!-- VALIDATE -->
+	<script type="text/javascript" src="jquery3.1.1/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="jquery3.1.1/additional-methods.min.js"></script>
+	<!--  -->
+
+	<script type="text/javascript" src="uikit/js/uikit.min.js"></script>
+	<script type="text/javascript" src="uikit/js/components/sticky.min.js"></script>
+	<script type="text/javascript" src="uikit/js/components/notify.js"></script>
+	<script type="text/javascript" src="uikit/js/components/grid.js"></script>
+
+	<script type="text/javascript" src="custom/js/helper/session-handler.js"></script>
+	<script type="text/javascript" src="custom/js/helper/post-handler.js"></script>
+	<script type="text/javascript" src="custom/js/view/main.js"></script>
+
+	<!--
+	NOT NECESSARY SINCE USING SHOW UP, WHICH SEEMS TO RELEASE THE FOCUS STATE
+
+	<style type="text/css">
+	uk-navbar-nav > li:not(.uk-active) > a:focus
+	{
+		background-color: inherit;
+		border-left-color: rgba(0,0,0,0);
+		border-right-color: rgba(0,0,0,0);
+	}
+	</style> -->
+
+</head>
+
+<body>
+<!-- NAV -->
+	<nav class="uk-navbar" data-uk-sticky="{showup: true, animation: 'uk-animation-fade'}">
+		<a href="index.html" class="uk-navbar-brand uk-visible-large">SmartValve</a>
+		<ul class="uk-navbar-nav uk-visible-large" data-uk-scrollspy-nav="{closest: 'li', smoothscroll: {offset : 100}}">
+			<li><a href="#unpaired">My Nodes</a></li>
+			<li><a href="#devices">My Devices</a></li>
+			<li><a href="#statistics">My Stats</a></li>
+			<li><a href="#log">My Logs</a></li>
+
+		</ul>
+		<div class="uk-navbar-flip uk-visible-large">
+		<ul class="uk-navbar-nav">
+			<li><a href="index.html">Log out</a></li>
+		</ul>
+		</div>
+
+		<ul class="uk-navbar-nav uk-hidden-large">
+			<a href="#offcanvas" class="uk-navbar-toggle" data-uk-offcanvas></a>
+
+		</ul>
+		<div class="uk-navbar-flip uk-hidden-large">
+		<ul class="uk-navbar-nav">
+			<li><a href="index.html"><i class="uk-icon-power-off"></i></a></li>
+		</ul>
+		</div>
+		<a href="#" class="uk-navbar-brand uk-navbar-center uk-hidden-large">SmartValve</a>
+
+
+	</nav>
+<!--  -->
+	<div class="my-container">
+		<div class="uk-container uk-container-center">
+
+
+		<!-- CONTENT -->
+		<div class="uk-margin-large-top uk-text-center uk-text-contrast" id="unpaired"><span  class="custom-h">My Nodes </span><a id="#nr" class="uk-float-right" onClick="GetUnpairedNodes()"><i class="uk-text-contrast uk-icon-refresh"></i></a> </div>
+			<hr class="uk-grid-divider">
+				<div id="ud">
+				</div>
+			</hr>
+		<div class="uk-margin-large-top uk-text-center uk-text-contrast" id="devices"><span class="custom-h">My Devices </span><a id="#dr" class="uk-align-right" onClick="GetValve()"><i class="uk-text-contrast uk-icon-refresh"></i></a></div>
+			<hr class="uk-grid-divider">
+				<div id="md">
+				</div>
+			</hr>
+
+			<h1 class="uk-text-center uk-text-contrast" id="statistics">My Stats</h1>
+				<hr class="uk-grid-divider">
+					<div class="uk-overflow-container">
+						<table class="uk-table uk-text-contrast uk-table-condensed">
+							<h2 class="uk-text-contrast">Water Usage</h2>
+							<thead>
+								<tr>
+									<th>Valve</th>
+									<th>Usage</th>
+									<th>$</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td>5 devices</td><td>1500</td><td>$15</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<td>Valve 1</td><td>100</td><td>$1</td>
+								</tr>
+								<tr>
+									<td>Valve 2</td><td>200</td><td>$2</td>
+								</tr>
+								<tr>
+									<td>Valve 3</td><td>300</td><td>$3</td>
+								</tr>
+								<tr>
+									<td>Valve 4</td><td>400</td><td>$4</td>
+								</tr>
+								<tr>
+									<td>Valve 5</td><td>500</td><td>$5</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="uk-table uk-text-contrast uk-table-condensed">
+							<h2 class="uk-text-contrast">Other Table</h2>
+							<thead>
+								<tr>
+									<th>Valve</th>
+									<th>Usage</th>
+									<th>$</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td>5 devices</td><td>1500</td><td>$15</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<td>Valve 1</td><td>100</td><td>$1</td>
+								</tr>
+								<tr>
+									<td>Valve 2</td><td>200</td><td>$2</td>
+								</tr>
+								<tr>
+									<td>Valve 3</td><td>300</td><td>$3</td>
+								</tr>
+								<tr>
+									<td>Valve 4</td><td>400</td><td>$4</td>
+								</tr>
+								<tr>
+									<td>Valve 5</td><td>500</td><td>$5</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</hr>
+			<h1 class="uk-text-center uk-text-contrast" id="log">My Logs</h1>
+				<hr class="uk-grid-divider">
+					<div class="uk-overflow-container">
+						<table class="uk-table uk-text-contrast uk-table-condensed">
+							<h2 class="uk-text-contrast">Device Logs</h2>
+							<thead>
+								<tr>
+									<th>Timestamp</th>
+									<th>Action</th>
+									</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>22 Sept 2016 [11:30 AM]</td><td>Valve 2 turned on (scheduled : 30 mins)</td>
+								</tr>
+								<tr>
+									<td>22 Sept 2016 [11:40 AM]</td><td>Valve 1 turned on (manual : no limit)</td>
+								</tr>
+								<tr>
+									<td>22 Sept 2016 [11:45 AM]</td><td>Valve 3 turned on (smart mode : 25 mins)</td>
+								</tr>
+								<tr>
+									<td>22 Sept 2016 [11:46 AM]</td><td>Valve 1 turned off after 16 mins (manual)</td>
+								</tr>
+								<tr>
+									<td>22 Sept 2016 [11:50 AM]</td><td>Valve 4 turned on (smart mode: 15 mins) malfunction (error:10592, attempt 1)</td>
+								</tr>
+								<tr>
+									<td>22 Sept 2016 [11:52 AM]</td><td>Valve 5 turned on (manual: no limit)</td>
+								</tr>
+								<tr>
+									<td>22 Sept 2016 [11:55 AM]</td><td>Valve 4 turned on (smart mode: 15 mins) malfunction (error:10592, attempt 2)</td>
+								</tr>
+								<tr>
+									<td>22 Sept 2016 [12:00 PM]</td><td>Valve 2 turned off after 30 mins (scheduled)</td>
+								</tr>
+								<tr>
+									<td>22 Sept 2016 [12:00 PM]</td><td>Valve 3 turned off after 15 mins (smart mode : early)</td>
+								</tr>
+								<tr>
+									<td>22 Sept 2016 [12:00 PM]</td><td>Valve 4 turned on (smart mode: 15 mins) malfunction (error:10592, attempt 3)</td>
+								</tr>
+								<tr>
+									<td>22 Sept 2016 [12:00 PM]</td><td>Valve 4 disabled, notification sent</td>
+								</tr>
+								<tr>
+									<td>22 Sept 2016 [12:00 PM]</td><td>Valve 5 already on (scheduled : 1 hour, ignoring)</td>
+								</tr>
+
+
+							</tbody>
+						</table>
+						<table class="uk-table uk-text-contrast uk-table-condensed">
+							<h2 class="uk-text-contrast">User Activity Logs</h2>
+							<thead>
+								<tr>
+									<th>Timestamp</th>
+									<th>Action</th>
+									</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>2 Sept 2016 [11:25 PM]</td><td>Logged in</td>
+								</tr>
+								<tr>
+									<td>2 Sept 2016 [11:30 AM]</td><td>Valve 1 added</td>
+								</tr>
+								<tr>
+									<td>2 Sept 2016 [11:45 AM]</td><td>Session expired</td>
+								</tr>
+								<tr>
+									<td>6 Sept 2016 [11:35 AM]</td><td>Login successful</td>
+								</tr>
+								<tr>
+									<td>6 Sept 2016 [11:40 AM]</td><td>Valve 2 added</td>
+								</tr>
+								<tr>
+									<td>6 Sept 2016 [11:42 AM]</td><td>Logged out</td>
+								</tr>
+								<tr>
+									<td>9 Sept 2016 [11:45 AM]</td><td>Logged in</td>
+								</tr>
+								<tr>
+									<td>9 Sept 2016 [11:49 AM]</td><td>Valve 3 added</td>
+								</tr>
+								<tr>
+									<td>9 Sept 2016 [11:50 AM]</td><td>Logged out</td>
+								</tr>
+								<tr>
+									<td>13 Sept 2016 [11:45 AM]</td><td>Logged in</td>
+								</tr>
+								<tr>
+									<td>13 Sept 2016 [11:46 AM]</td><td>Valve 2 configured to schedule</td>
+								</tr>
+								<tr>
+									<td>13 Sept 2016 [11:50 AM]</td><td>Valve 4 added</td>
+								</tr>
+								<tr>
+									<td>13 Sept 2016 [11:51 AM]</td><td>Logged out</td>
+								</tr>
+								<tr>
+									<td>15 Sept 2016 [11:52 AM]</td><td>Valve 5 added</td>
+								</tr>
+								<tr>
+									<td>15 Sept 2016 [11:55 AM]</td><td>Valve 4 configured to smart mode</td>
+								</tr>
+								<tr>
+									<td>15 Sept 2016 [12:00 PM]</td><td>Valve 2 configured to schedule</td>
+								</tr>
+								<tr>
+									<td>18 Sept 2016 [12:00 PM]</td><td>Valve 3 configured to smart mode</td>
+								</tr>
+								<tr>
+									<td>21 Sept 2016 [12:00 PM]</td><td>Login successful</td>
+								</tr>
+								<tr>
+									<td>21 Sept 2016 [12:10 PM]</td><td>Valve 5 configured to schedule</td>
+								</tr>
+								<tr>
+									<td>21 Sept 2016 [12:11 PM]</td><td>Logged out</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</hr>
+				<footer class="uk-text-center uk-margin-large">
+					<a href="#" data-uk-smooth-scroll>To Top</a>
+				</footer>
+
+
+
+				<div id="offcanvas" class="uk-offcanvas">
+					<div class="uk-offcanvas-bar">
+						<ul class="uk-nav uk-nav-offcanvas">
+							<li><a href="#unpaired">My Nodes</a></li>
+							<li><a href="#devices">My Devices</a></li>
+							<li><a href="#statistics">My Stats</a></li>
+							<li><a href="#log">My Logs</a></li>
+							<li><a href="index.html">Log out</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- This is the modal -->
+				<div id="controlvalve" class="uk-modal uk-center">
+					<div class="uk-modal-dialog">
+						<button type="button" class="uk-modal-close uk-close"></button>
+										<div class="uk-modal-header">
+											<h2>Change the state of your device</h2>
+										</div>
+										<form id="switch" name="switch" class="uk-form uk-form-stacked">
+
+										<div class="uk-form-row">
+											<div class="uk-grid uk-grid-small"><label class="uk-form-label" for="vname">Valve</label></div>
+											<div class="uk-form-controls">
+												<input type="text" name="vname" id="vname" placeholder="Enter valve name" readonly/>
+											</div>
+										</div>
+										<div class="uk-form-row">
+											<div class="uk-grid uk-grid-small"><label class="uk-form-label" for="vstate">Switch device</label></div>
+											<div class="uk-form-controls">
+												<input type="text" id="vstate" name="vstate" placeholder="Enter on or off" readonly/>
+											</div>
+										</div>
+										<div class="uk-form-row">
+											<div class="uk-grid uk-grid-small"><label class="uk-form-label" for="vduration">Duration</label></div>
+											<div class="uk-form-controls">
+												<input type="number" id="vduration" name="vduration" min="1" max="64800" step="1" value="60"/> seconds
+											</div>
+										</div>
+										<input type="hidden" id="vid" name="vid" value=""/>
+										<!-- <div class="uk-form-row">
+											<div class="uk-grid uk-grid-small"><label class="uk-form-label" for="sfirst">First Name</label></div>
+											<div class="uk-form-controls">
+												<input type="text" id="sfirst" name="sfirst" placeholder="Enter first name"/>
+											</div>
+										</div>
+										<div class="uk-form-row">
+											<div class="uk-grid uk-grid-small"><label class="uk-form-label" for="slast">Last Name</label></div>
+											<div class="uk-form-controls">
+												<input type="text" id="slast" name="slast" placeholder="Enter last name"/>
+											</div>
+										</div> -->
+										<div class="uk-modal-footer uk-text-right">
+											<button type="button" class="uk-button uk-modal-close">Cancel</button>
+											<button type="submit" class="uk-button uk-button-primary" id="vok">Switch</button>
+										</div>
+										</form>
+					</div>
+				</div>
+			<!-- <div class="uk-panel uk-panel-box">
+				<h2>Valve 1</h2>
+				<p>
+				Status<br>
+				State<br>
+				Water usage
+				</p>
+			</div> -->
+		</div>
+	</div>   <!-- END MY CONTAINER -->
+
+</body>
+</html>

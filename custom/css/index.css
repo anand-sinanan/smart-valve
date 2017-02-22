@@ -1,0 +1,35 @@
+i { padding-top: 20px; padding-bottom: 0px;}
+
+
+.slide,
+.footer { padding: 50px 0; }
+
+/* Tablet and bigger */
+@media (min-width: 768px) {
+
+    
+	.slide,
+    .footer { padding: 90px 0; }
+
+}
+
+/* Large screen and bigger */
+@media (min-width: 1220px) {
+
+    
+	.slide,
+    .footer { padding: 120px 0; }
+
+}
+
+
+.slide-1 { background: #52c1ea;}
+.slide-2 { background: #2ba3d4; }
+.slide-3 { background: #000000; }
+
+.uk-panel { background: transparent; border:none;}
+
+.uk-navbar
+{
+	border-radius: 0px;
+}

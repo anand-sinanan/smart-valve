@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Smart Valve</title>
+
+		<link rel="stylesheet" type="text/css" href="uikit/css/uikit.almost-flat.min.css">
+		<link rel="stylesheet" type="text/css" href="uikit/css/components/sticky.almost-flat.min.css">
+		<link rel="stylesheet" type="text/css" href="uikit/css/components/form-password.almost-flat.min.css">
+		<link rel="stylesheet" type="text/css" href="uikit/css/components/notify.almost-flat.min.css">
+		<link rel="stylesheet" type="text/css" href="custom/css/index.css">
+
+		<script type="text/javascript" src="jquery3.1.1/jquery-3.1.1.min.js"></script>
+
+		<!-- VALIDATE -->
+		<script type="text/javascript" src="jquery3.1.1/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="jquery3.1.1/additional-methods.min.js"></script>
+		<!--  -->
+
+		<!-- UIKIT -->
+		<script type="text/javascript" src="uikit/js/uikit.min.js"></script>
+		<script type="text/javascript" src="uikit/js/components/sticky.min.js"></script>
+		<script type="text/javascript" src="uikit/js/components/form-password.min.js"></script>
+		<script type="text/javascript" src="uikit/js/components/notify.js"></script>
+		<script type="text/javascript" src="uikit/js/components/grid.js"></script>
+		<!--  -->
+
+		<!-- <script src="uikit/js/_test.js"></script> -->
+    <!-- <script src="uikit/js/components/parallax.js"></script> -->
+		<script type="text/javascript" src="uikit/js/sha1.js"></script>
+
+		<script type="text/javascript" src="custom/js/helper/session-handler.js"></script>
+		<script type="text/javascript" src="custom/js/helper/post-handler.js"></script>
+		<script type="text/javascript" src="custom/js/view/index.js"></script>
+        <style media="screen">
+            body {
+                /*min-height: 400vh;*/
+            }
+            .test-hero-bg {
+                height: 70vh;
+                /*background-image: url('http://i.jootix.com/o/Splash-splash-ratow.jpg');*/
+                background-size: cover;
+                background-color: deepskyblue;
+            }
+            .test-bg {
+                height: 70vh;
+                /*background-image: url('http://unsplash.it/1200/800');*/
+				background-color: #2ba3d4;
+            }
+			.test-bg2 {
+                height: 400px;
+                /*background-image: url('http://unsplash.it/1200/800');*/
+				background-color: #3dc0f1;
+            }
+			.test-bg3 {
+                height: 400px;
+                /*background-image: url('http://unsplash.it/1200/800');*/
+				background-color: black;
+            }
+
+            .test-color {
+                height: 400px;
+                border: 10px #fff solid;
+            }
+            .test-filter {
+                height: 400px;
+                	background-image: url('http://unsplash.it/1200/801'); /**/
+            }
+
+			slide {
+				padding: 25px;
+
+			}
+			slide-1 {
+			}
+        </style>
+
+    </head>
+
+    <body>
+<!-- NAV -->
+	<nav class="uk-navbar uk-flex uk-flex-center uk-flex-middle" data-uk-sticky="{showup: true, animation: 'uk-animation-fade', cls: 'attached'}">
+		<a href="#" class="uk-navbar-brand uk-visible-large">SmartValve</a>
+		<ul class="uk-navbar-nav uk-visible-large" data-uk-scrollspy-nav="{closest: 'li', smoothscroll: {offset : 50}}">
+			<li><a href="#how">How it works</a></li>
+			<li><a href="#get">Getting Started</a></li>
+			<li class="uk-parent" data-uk-dropdown="">
+                <a href="">More</a>
+
+                                        <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-top"> <!-- aria-hidden="true" style="top: -218px; left: 0px;" tabindex=""> -->
+                                            <ul class="uk-nav uk-nav-navbar">
+
+												<li><a href="#signup" class="uk-dropdown-close" data-uk-modal>Register</a></li>
+                                                <li><a href="#forgot">Forgot Password?</a></li>
+												<li><a href="#contact">Contact Us</a></li>
+												<li><a href="#faq">FAQ</a></li>
+												<li><a href="#about">About Us</a></li>
+
+                                               <!--  <li class="uk-nav-header">Header</li>
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Another item</a></li>
+                                                <li class="uk-nav-divider"></li>
+                                                <li><a href="#">Separated item</a></li> -->
+                                            </ul>
+                                        </div>
+
+                                    </li>
+		</ul>
+		<div class="uk-navbar-flip uk-visible-large uk-margin-large-left">
+			<form id="login1" class="uk-form">
+				<input class="uk-form-small" id="user1" name="user1" type="email" placeholder="Username" required/>
+				<input class="uk-form-small" id="pass1" name="pass1" type="password" placeholder="Password" required/>
+			<button type="submit" id="login1b" class="uk-button uk-button-small uk-button-primary">Sign In</button>
+			</form>
+		</div>
+		<a href="#offcanvas" class="uk-navbar-toggle uk-hidden-large" data-uk-offcanvas></a>
+		<a href="#" class="uk-navbar-brand uk-hidden-large uk-navbar-center">SmartValve</a>
+
+	</nav>
+
+    <div class="slide slide-1">
+		<div class="uk-container uk-container-center uk-text-center uk-text-contrast">
+
+                <h1 class="uk-text-contrast">SmartValve</h1>
+
+				<i class="uk-icon-tint uk-icon-large uk-icon-hover uk-text-contrast"></i>
+
+                <p class="uk-text-large">Water bill keeps rising? Tired of <br class="uk-hidden-small"> watering your lawn? We'll take care of it.</p>
+
+                <a href="#signup" class="uk-button uk-button-success" data-uk-modal>Sign up!</a>
+
+                <!-- <ul class="tm-subnav uk-subnav uk-flex-center">
+                    <li><a href="https://github.com/uikit/uikit">GitHub</a></li>
+                    <li><a href="docs/documentation_get-started.html">Get Started</a></li>
+                    <li data-uikit-version="">Version 2.27.2</li>
+                </ul>
+
+                <ul class="tm-subnav uk-subnav uk-flex-center">
+                    <li><a href="https://github.com/uikit/uikit/stargazers"><i class="uk-icon-star"></i> <span data-uikit-stargazers="">7639</span> Stargazers</a></li>
+                    <li><a href="https://github.com/uikit/uikit/network"><i class="uk-icon-code-fork"></i> <span data-uikit-forks="">1464</span> Forks</a></li>
+                    <li><a href="https://twitter.com/getuikit"><i class="uk-icon-twitter"></i> @getuikit</a></li>
+                    <li><a href="https://gitter.im/uikit/uikit"><i class="uk-icon-comments-o"></i> Community</a></li>
+                </ul> -->
+
+        </div>
+	</div>
+    <div id="how" class="slide slide-2">
+		<div class="uk-container uk-container-center uk-text-center uk-text-contrast">
+
+                <h1 class="uk-text-contrast">How it works</h1>
+
+				<i class="uk-icon-home uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-tree uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-building uk-icon-large uk-icon-hover uk-text-contrast"></i>
+
+                <p class="uk-text-medium">Install SmartValve <br class="uk-hidden-small">on any pipeline you want to manage.</p>
+
+                <i class="uk-icon-cloud uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-database uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-cube uk-icon-large uk-icon-hover uk-text-contrast"></i>
+
+                <p class="uk-text-medium">Secure data on the cloud<br class="uk-hidden-small"> once you sign up and register your device.</p>
+
+				<i class="uk-icon-magic uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-line-chart uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-globe uk-icon-large uk-icon-hover uk-text-contrast"></i>
+
+                <p class="uk-text-medium">Control your devices. Anytime, anywhere.<br class="uk-hidden-small"> View your usage, set schedules or enable our eco-friendly mode.</p>
+
+				<i class="uk-icon-money uk-icon-large uk-icon-hover uk-text-contrast"></i>
+
+				<p class="uk-text-medium">And of course,<br class="uk-hidden-small"> put more of these guys back in your pocket.</p>
+				<!-- <a href="#signup" class="uk-button uk-button-success">Sign up!</a> -->
+		</div>
+	</div>
+
+	<div id="get" class="slide slide-3">
+		<div class="uk-container uk-container-center uk-text-center uk-text-contrast">
+
+			<h1 class="uk-text-contrast">Getting Started</h1>
+			<ul class="uk-grid  uk-grid-width-1-1 uk-grid-width-medium-1-1 uk-grid-width-large-1-3" data-uk-scrollspy="{cls: 'uk-animation-fade uk-invisible', target:'> li > div', delay:300, repeat: true}">
+				<li>
+					<div class='uk-panel uk-panel-box uk-invisible uk-text-contrast'>
+					<i class="uk-icon-gift uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-shopping-cart uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-thumbs-o-up uk-icon-large uk-icon-hover uk-text-contrast"></i>
+
+					<p class="uk-text-medium">1. Buy SmartValve <br class="uk-hidden-small">either in stores or order online.</p>
+
+					<!-- <button class=\"uk-button uk-button-primary\"onClick='postHandler(\"http://"+ nodelist[i].internalIP + ":8080/pair\", {\"userid\":\""+user.userID+"\"}, function(data){} )' >Pair</button> -->
+					</p>
+					</div>
+				</li>
+				<li>
+					<div class='uk-panel uk-panel-box uk-invisible uk-text-contrast'>
+					<a href="#signup" data-uk-modal><i class="uk-icon-mobile uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-download uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-tablet uk-icon-large uk-icon-hover uk-text-contrast"></i></a>
+
+					<p class="uk-text-medium">2. Create your account<br class="uk-hidden-small"> by downloading our mobile application and/or by clicking <a class="uk-text-success" href="#signup" data-uk-modal>here</a>.</p>
+
+
+					</p>
+					</div>
+				</li>
+				<li>
+					<div class='uk-panel uk-panel-box uk-invisible uk-text-contrast'>
+					<i class="uk-icon-flask uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-bed uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-tv uk-icon-large uk-icon-hover uk-text-contrast"></i>
+
+					<p class="uk-text-medium">3. That's it!.<br class="uk-hidden-small"> Sit back, relax, use the time to binge watch Breaking Bad all over again.</p>
+
+
+					</p>
+					</div>
+				</li>
+				<!-- <li>
+					<div class='uk-panel uk-panel-box uk-invisible uk-text-contrast'>
+					<i class="uk-icon-money uk-icon-large uk-icon-hover uk-text-contrast"></i>
+
+					<p class="uk-text-medium">And of course,<br class="uk-hidden-small"> put more of these guys back in your pocket.</p>
+
+
+					</p>
+					</div>
+				</li> -->
+			</ul>
+		</div>
+	</div>
+	<div class="slide slide-2">
+		<div class="uk-container uk-container-center uk-text-center uk-text-contrast">
+
+			<h1 class="uk-text-contrast">How it works</h1>
+			<div class="uk-grid uk-grid-large uk-grid-width-1-1 uk-grid-width-medium-1-2 uk-grid-width-large-1-4" data-uk-grid="{gutter:0}" data-uk-scrollspy="{cls: 'uk-animation-fade uk-invisible', target:'> div', delay:300, repeat: true}">
+
+					<div class='uk-panel uk-panel-box uk-invisible uk-text-contrast'>
+					<i class="uk-icon-home uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-tree uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-building uk-icon-large uk-icon-hover uk-text-contrast"></i>
+
+					<p class="uk-text-medium">Install SmartValve <br class="uk-hidden-small">on any pipeline you want to manage.</p>
+
+					<!-- <button class=\"uk-button uk-button-primary\"onClick='postHandler(\"http://"+ nodelist[i].internalIP + ":8080/pair\", {\"userid\":\""+user.userID+"\"}, function(data){} )' >Pair</button> -->
+					</p>
+					</div>
+
+					<div class='uk-panel uk-panel-box uk-invisible uk-text-contrast'>
+					<i class="uk-icon-cloud uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-database uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-cube uk-icon-large uk-icon-hover uk-text-contrast"></i>
+
+					<p class="uk-text-medium">Secure data on the cloud<br class="uk-hidden-small"> once you sign up and register your device.</p>
+
+
+					</p>
+					</div>
+
+					<div class='uk-panel uk-panel-box uk-invisible uk-text-contrast'>
+					<i class="uk-icon-magic uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-line-chart uk-icon-large uk-icon-hover uk-text-contrast"></i> <i class="uk-icon-globe uk-icon-large uk-icon-hover uk-text-contrast"></i>
+
+					<p class="uk-text-medium">Control your devices. Anytime, anywhere.<br class="uk-hidden-small"> View your usage, set schedules or enable our eco-friendly mode.</p>
+
+
+					</p>
+					</div>
+
+					<div class='uk-panel uk-panel-box uk-invisible uk-text-contrast'>
+					<i class="uk-icon-money uk-icon-large uk-icon-hover uk-text-contrast"></i>
+
+					<p class="uk-text-medium">And of course,<br class="uk-hidden-small"> put more of these guys back in your pocket.</p>
+
+
+					</p>
+					</div>
+
+			</div>
+		</div>
+
+	</div>
+
+	<footer class="uk-text-center uk-margin-large">
+				<a href="#" data-uk-smooth-scroll>To Top</a>
+			</footer>
+
+
+			<!----- LIL MOBILE MENUUUU  -->
+			<div id="offcanvas" class="uk-offcanvas">
+				<div class="uk-offcanvas-bar">
+					<ul class="uk-nav uk-nav-offcanvas">
+						<li><a href="#how">How it works</a></li>
+						<li><a href="#get">Getting Started</a></li>
+						<li><a href="#signup" data-uk-modal>Register</a></li>
+						<li><a href="#contact">Contact Us</a></li>
+						<li><a href="#faq">FAQ</a></li>
+						<li><a href="#about">About Us</a></li>
+					</ul>
+					<fieldset>
+					<legend class="uk-text-contrast">Sign In</legend>
+					<form id="login2" class="uk-form">
+						<div class="uk-form-row"><input id="user2" name="user2" class="uk-form-small" type="email" placeholder="Username" required/></div>
+						<div class="uk-form-row"><input id="pass2" name="pass2" class="uk-form-small" type="password" placeholder="Password" required/></div>
+						<div class="uk-form-row"><button type="submit" id="login2b" class="uk-button uk-button-small uk-button-primary">Sign In</button></div>
+					</form>
+					</fieldset>
+				</div>
+			</div>
+
+			<!----- LIL REGISTRATION ACTION (see nav bar) -->
+
+
+			<!-- This is the modal -->
+			<div id="signup" class="uk-modal uk-center">
+				<div class="uk-modal-dialog">
+					<button type="button" class="uk-modal-close uk-close"></button>
+                                    <div class="uk-modal-header">
+                                        <h2>Join Us! Sign Up Today</h2>
+                                    </div>
+                                    <form id="registration" name="registration" class="uk-form uk-form-stacked">
+
+                                    <div class="uk-form-row">
+                                        <div class="uk-grid uk-grid-small"><label class="uk-form-label" for="semail">E-mail</label></div>
+                                        <div class="uk-form-controls">
+                                            <input type="email" name="semail" id="semail" placeholder="Enter e-mail address"/>
+                                        </div>
+                                    </div>
+                                    <div class="uk-form-row">
+                                        <div class="uk-grid uk-grid-small"><label class="uk-form-label" for="spass">Password</label></div>
+                                        <div class="uk-form-controls uk-form-password">
+                                            <input type="password" id="spass" name="spass" placeholder="Enter password"/><a href="" class="uk-form-password-toggle" data-uk-form-password>...</a>
+                                        </div>
+                                    </div>
+									<div class="uk-form-row">
+                                        <div class="uk-grid uk-grid-small"><label class="uk-form-label" for="sconfirm">Confirm Password</label></div>
+                                        <div class="uk-form-controls uk-form-password">
+                                            <input type="password" id="sconfirm" name="sconfirm" placeholder="One more time"/><a href="" class="uk-form-password-toggle" data-uk-form-password>...</a>
+                                        </div>
+                                    </div>
+									<div class="uk-form-row">
+                                        <div class="uk-grid uk-grid-small"><label class="uk-form-label" for="sfirst">First Name</label></div>
+                                        <div class="uk-form-controls">
+                                            <input type="text" id="sfirst" name="sfirst" placeholder="Enter first name"/>
+                                        </div>
+                                    </div>
+									<div class="uk-form-row">
+                                        <div class="uk-grid uk-grid-small"><label class="uk-form-label" for="slast">Last Name</label></div>
+                                        <div class="uk-form-controls">
+                                            <input type="text" id="slast" name="slast" placeholder="Enter last name"/>
+                                        </div>
+                                    </div>
+                                    <div class="uk-modal-footer uk-text-right">
+                                        <button type="button" class="uk-button uk-modal-close">Cancel</button>
+                                        <button type="submit" class="uk-button uk-button-primary" id="join">Join</button>
+                                    </div>
+									</form>
+				</div>
+			</div>
+
+
+    </body>
+</html>
