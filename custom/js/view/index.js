@@ -40,7 +40,7 @@ jQuery.validator.addMethod("alphanumeric", function(value, element) {
 
 	function SignIn(username, password) {
 
-			var url = "http://54.83.192.126:8089/login";
+			var url = "http://localhost/login";
 			var params = {
 						username: username,
 						password: sha1(password),
