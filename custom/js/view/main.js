@@ -7,7 +7,7 @@ function GetValve() {
 			//$('#md').html('<li><div class="uk-alert uk-animation-slide" data-uk-alert><a href="" class="uk-alert-close uk-close"></a><p>Preparing your devices</p></div></li>');
 			$('#md').html('<h1 class="uk-text-contrast uk-text-center"><i class="uk-icon-refresh uk-icon-spin"></i><h1>');
 		    //setTimeout(function(){}, 5000);
-			var url = "http://54.83.192.126:8089/getvalve";
+			var url = "http://localhost/getvalve";
 			var params = {};
 
 			// postHandler(url, params, function(data) {
@@ -31,7 +31,7 @@ function GetUnpairedNodes()
 			//$('#ud').html('<li><div class="uk-alert uk-animation-slide" data-uk-alert><a href="" class="uk-alert-close uk-close"></a><p>Scanning for unpaired devices</p></div></li>');
 			$('#ud').html('<h1 class="uk-text-contrast uk-text-center"><i class="uk-icon-refresh uk-icon-spin"></i><h1>');
 
-			var url = "http://54.83.192.126:8089/listallunpairednodes";
+			var url = "http://localhost/listallunpairednodes";
 			var params = {};
 			// postHandler(url, params, function(data) {
 			// 		  	//UIkit.notify("Scanning for unpaired devices...", {pos:'top-center', status:'success'});
@@ -134,7 +134,7 @@ function controlValveModal(id, name, state)
 
 function controlValve()
 {
-			var url = "http://54.83.192.126:8089/controlvalve";
+			var url = "http://localhost/controlvalve";
 
 			var vid = $('#vid').val();
 			var vstate = $('#vstate').val();
