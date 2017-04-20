@@ -1,6 +1,6 @@
 # smart-valve
 
-This is pretty much me playing around with UIKit and barebones Vanilla style HTML5/CSS3/Javascript.
+This is pretty much me playing around with UIKit and barebones Vanilla style HTML5/CSS3/Javascript. (so stick into any web folder)
 
 Theme : Using IoT to manage your water consumption (concept)
 
